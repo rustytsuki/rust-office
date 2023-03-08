@@ -1,0 +1,8 @@
+[env]
+# change these environment should do "cargo clean"
+# these pkg-config only for development with kernel source
+PKG_CONFIG_ALLOW_CROSS = {value = "1" }
+# PKG_CONFIG_PATH = {value = "../rust-office-vcpkg/x86_64-pc-windows-msvc/installed/x64-windows/lib/pkgconfig", relative = true}
+# PKG_CONFIG_PATH = {value = "../rust-office-vcpkg/i686-pc-windows-msvc/installed/x86-windows/lib/pkgconfig", relative = true}
+# PKG_CONFIG_PATH = {value = "../rust-office-vcpkg/x86_64-apple-darwin/installed/x64-osx-dynamic/lib/pkgconfig", relative = true}
+# PKG_CONFIG_PATH = {value = "../rust-office-vcpkg/aarch64-apple-darwin/installed/arm64-osx-dynamic/lib/pkgconfig", relative = true}

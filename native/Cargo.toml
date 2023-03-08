@@ -1,0 +1,17 @@
+[package]
+name = "native"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "rust_office"
+path = "src/main.rs"
+
+[features]
+default = ["glow"]
+glow = ["shell/glow", "shell/skia", "shell/skia_force_cpu"]
+skia = ["shell/skia", "shell/skia_force_cpu"]
+use_kernel_source = ["shell/use_kernel_source"]
+
+[dependencies]
+shell = { path = "../shell", optional = true }

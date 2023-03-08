@@ -1,0 +1,22 @@
+{
+    "name": "deploy",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "deploy_win": "node index.js -u -t x86_64-pc-windows-msvc,i686-pc-windows-msvc",
+        "deploy_mac": "node index.js -u -t x86_64-apple-darwin,aarch64-apple-darwin",
+        "deploy_web": "node index.js -u -t wasm32-unknown-unknown",
+        "dev_win": "node index.js -t x86_64-pc-windows-msvc,i686-pc-windows-msvc",
+        "dev_mac": "node index.js -t x86_64-apple-darwin,aarch64-apple-darwin",
+        "dev_web": "node index.js -t wasm32-unknown-unknown"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "command-line-args": "^5.2.1",
+        "fs-extra": "^11.1.0",
+        "simple-git": "^3.16.1"
+    }
+}

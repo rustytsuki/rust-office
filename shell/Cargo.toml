@@ -1,0 +1,44 @@
+[package]
+edition = "2021"
+name = "shell"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = []
+glow = ["eframe/glow"]
+wgpu = ["eframe/wgpu"]
+skia = ["eframe/skia"]
+skia_force_cpu = ["eframe/skia_force_cpu"]
+html5_canvas_2d = ["eframe/html5_canvas_2d"]
+default_fonts = ["eframe/default_fonts"]
+egui_demo = ["dep:egui_demo_lib"]
+
+use_kernel_source = []
+
+[dependencies]
+async-ffi = "0.4.0"
+eframe = {git = "https://github.com/rustytsuki/egui", branch = "rust-office", default-features = false}
+egui_demo_lib = { git = "https://github.com/rustytsuki/egui", branch = "rust-office", optional = true }
+# eframe = {path = "../../egui/crates/eframe", default-features = false}
+# egui_demo_lib = {path = "../../egui/crates/egui_demo_lib", optional = true}
+# rust-office-engine = { path = "../../rust-office-engine" }
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+# fontconfig = "0.6"
+tokio = {version = "1.4.0", features = ["full"]}
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+js-sys = "0.3"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+web-sys = { version = "0.3", features = [
+    "Window",
+    "Document",
+    "HtmlCanvasElement",
+    "CanvasRenderingContext2d",
+] }

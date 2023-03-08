@@ -1,0 +1,28 @@
+[[bin]]
+name = "server"
+path = "src/main.rs"
+
+[package]
+edition = "2021"
+name = "server"
+version = "0.1.0"
+
+[dependencies]
+lazy_static = "1.4.0"
+axum = {version = "0.5", features = ["multipart"]}
+hyper = {version = "0.14", features = ["full"]}
+tokio = {version = "1.19.2", features = ["full"]}
+tokio-stream = "0.1.9"
+futures = { version = "0.3", default-features = false }
+tracing = "0.1"
+tracing-subscriber = {version = "0.3", features = ["env-filter"]}
+tower-http = { version = "0.3.0", features = ["fs"] }
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tini = "1.3"
+clap = { version = "3.0.1", features = ["derive"] }
+sqlx = { version = "0.5", features = [ "runtime-tokio-rustls", "sqlite" ] }
+axum_database_sessions = { version = "2.1.0", features = [ "sqlite", "rustls"], default-features = false }
+sha-crypt = "0.4"
+async-trait = "0.1.56"
+zip = { version = "0.6.2", features = ["deflate"], default-features = false }

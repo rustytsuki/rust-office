@@ -1,0 +1,8 @@
+.DS_Store
+.vs
+CMakeSettings.json
+.idea
+cmake-build-*
+/build
+/target
+/data
