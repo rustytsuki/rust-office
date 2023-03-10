@@ -1,0 +1,10 @@
+{
+  "name": "shell",
+  "version": "0.1.0",
+  "files": [
+    "rust_office_engine_bg.wasm",
+    "rust_office_engine.js"
+  ],
+  "module": "rust_office_engine.js",
+  "sideEffects": false
+}
